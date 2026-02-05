@@ -1,0 +1,35 @@
+@model ICoche
+
+
+<h1>Coche</h1>
+
+
+
+<h2 class="text-primary">
+    @Model.Marca @Model.Modelo
+    
+</h2>
+
+<h2 class="text-primary">
+    Velocidad Actual
+    @Model.Velocidad
+</h2>
+<h2 class="text-primary">
+    Velocidad Máxima
+    @Model.VelocidadMaxima
+
+</h2>
+
+<form method="post">
+    <button name="accion" value="acelerar" class="btn btn-warning">
+        Acelerar
+    </button>
+    
+    <button name="accion" value="frenar" class="btn btn-danger">
+        Frenar
+    </button>
+</form>
+
+<img src="~/images/@Model.Imagen" style="width: 120px;height: 120px"/>
+
+
