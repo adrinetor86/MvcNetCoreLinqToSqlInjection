@@ -7,5 +7,5 @@ public class Doctor
     public string Especialidad { get; set; }
     public int Salario { get; set; }
     public int IdHospital { get; set; }
-    
+
 }

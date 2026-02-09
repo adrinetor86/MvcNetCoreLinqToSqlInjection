@@ -1,0 +1,25 @@
+@model Doctor
+
+
+
+<form method="post">
+
+    <label for="">ID Hospital:</label>
+    <input type="text" name="idHospital" value="@Model.IdHospital">
+    
+    <label for="">ID Doctor:</label>
+    <input type="text" hidden name="idDoctor" value="@Model.IdDoctor"> 
+    
+    <label for="">Apellido:</label>
+    <input type="text" name="apellido" value="@Model.Apellido">
+    
+    <label for="">Especialiad:</label>
+    <input type="text" name="especialidad" value="@Model.Especialidad">
+    
+    <label for="">Salario:</label>
+    <input type="text" name="salario" value="@Model.Salario">
+    
+    <button class="btn btn-primary">Update</button>
+    
+</form>
+

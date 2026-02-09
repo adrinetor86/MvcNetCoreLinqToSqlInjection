@@ -3,6 +3,11 @@
 
 <a asp-controller="Doctores" asp-action="Create">Crear</a>
 
+<li class="nav-item">
+    <a class="nav-link text-dark" asp-area=""
+       asp-controller="Doctores"
+       asp-action="DoctoresEspecialidad">Doctores By Especialidad</a>
+</li>
 
 <table class="table table-striped">
 
@@ -13,6 +18,7 @@
         <th>Especialidad</th>
         <th>Salario</th>
         <th>Hospital</th>
+        <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
@@ -25,6 +31,16 @@
             <td>@doc.Especialidad</td>
             <td>@doc.Salario</td>
             <td>@doc.IdHospital</td>
+            <td><a asp-controller="Doctores" asp-action="Update"
+                   asp-route-idDoctor="@doc.IdDoctor"
+                   class="btn btn-primary">
+                Update
+            </a></td>
+            <td><a asp-controller="Doctores" asp-action="Delete"
+                   asp-route-iddoctor="@doc.IdDoctor"
+                   class="btn btn-danger">
+                Eliminar
+            </a></td>
         </tr>
     }
     </tbody>

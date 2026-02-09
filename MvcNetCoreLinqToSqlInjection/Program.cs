@@ -5,7 +5,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 //Nota, los Repos suelen ir como Transient
+
+//builder.Services.AddTransient<RepositorySQLServer>();
+// builder.Services.AddTransient<RepositoryDoctoresOracle>();
+
+//builder.Services.AddTransient<IRepositoryDoctores,RepositorySQLServer>();
+builder.Services.AddTransient<IRepositoryDoctores,RepositoryDoctoresOracle>();
 
 Coche car= new Coche();
 car.Marca = "Pontiac";
@@ -16,7 +23,7 @@ car.VelocidadMaxima = 280;
 
 builder.Services.AddSingleton<ICoche,Coche>(x=> car);
 
-builder.Services.AddTransient<RepositorySQLServer>();
+
 
 //RESOLVEMOS EL SERVICIO COCHE PARA LA INYECCION
 //builder.Services.AddTransient<Coche>();
